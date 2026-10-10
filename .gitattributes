@@ -1,0 +1,27 @@
+# Windows 上 core.autocrlf 默认是 true，会把所有文本转成 CRLF 存进仓库，
+# 到了 Linux 容器里就跑不动 shell 脚本。统一在仓库里存 LF。
+* text=auto eol=lf
+
+# 这些确实是二进制，别动
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+*.zip binary
+*.xlsx binary
+
+# 这些必须保持 LF，否则容器里执行会报错
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# 语言统计：别把锁文件和上游文档算进去
+package-lock.json linguist-generated=true

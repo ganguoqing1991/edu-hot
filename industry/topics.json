@@ -1,0 +1,632 @@
+{
+  "exportedAt": "2026-09-29",
+  "groups": [
+    {
+      "key": "company",
+      "name": "机构与学校",
+      "blurb": "按主管单位、名校与教育机构追踪：谁发了什么、谁又动了"
+    },
+    {
+      "key": "field",
+      "name": "学段与赛道",
+      "blurb": "按学段与细分赛道深挖：幼升小、小升初、中考、双减、机构经营……"
+    },
+    {
+      "key": "genre",
+      "name": "内容形态",
+      "blurb": "按内容类型浏览：政策文件、升学招生、家长舆情、一线声音……"
+    }
+  ],
+  "topics": [
+    {
+      "slug": "moe",
+      "name": "教育部",
+      "group": "company",
+      "entityId": "moe",
+      "tags": [
+        "教育部",
+        "entity:moe"
+      ],
+      "definition": "教育部层面发布的政策、文件、通知、新闻发布会与例行部署——教育行业的政策源头。",
+      "related": [
+        "cq-jw",
+        "policy-docs",
+        "shuangjian"
+      ]
+    },
+    {
+      "slug": "cq-jw",
+      "name": "重庆市教委",
+      "group": "company",
+      "entityId": "cq-jw",
+      "tags": [
+        "重庆市教委",
+        "entity:cq-jw"
+      ],
+      "definition": "重庆市教育委员会的公告公示、政策文件、部门动态与政策解读——本地最硬的一手信源。",
+      "related": [
+        "moe",
+        "cq-ksy",
+        "policy-docs"
+      ]
+    },
+    {
+      "slug": "cq-ksy",
+      "name": "重庆教育考试院",
+      "group": "company",
+      "entityId": "cq-ksy",
+      "tags": [
+        "entity:cq-ksy"
+      ],
+      "definition": "重庆市教育考试院的招考安排、报名与录取通知、成绩与分数线发布——中高考家长必看。",
+      "related": [
+        "cq-jw",
+        "zhongkao",
+        "gaokao"
+      ]
+    },
+    {
+      "slug": "qilongzhu",
+      "name": "七龙珠",
+      "group": "company",
+      "entityId": "qilongzhu",
+      "tags": [
+        "七龙珠",
+        "entity:qilongzhu"
+      ],
+      "definition": "重庆七所市教委直属重点中学（一中、南开、八中、巴蜀、育才、西大附中、一外）的招生、管理与发展动态。",
+      "related": [
+        "cq-jw",
+        "xiaoshengchu",
+        "zhongkao"
+      ]
+    },
+    {
+      "slug": "xueersi",
+      "name": "学而思 / 好未来",
+      "group": "company",
+      "entityId": "xueersi",
+      "tags": [
+        "学而思",
+        "entity:xueersi"
+      ],
+      "definition": "好未来与学而思的业务转型、产品线调整、合规动态与经营表现。",
+      "related": [
+        "xdf",
+        "shuangjian",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "xdf",
+      "name": "新东方",
+      "group": "company",
+      "entityId": "xdf",
+      "tags": [
+        "新东方",
+        "entity:xdf"
+      ],
+      "definition": "新东方的业务结构、转型方向、人事与财报动态。",
+      "related": [
+        "xueersi",
+        "hangye-shichang",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "zuoyebang",
+      "name": "作业帮",
+      "group": "company",
+      "entityId": "zuoyebang",
+      "tags": [
+        "作业帮",
+        "entity:zuoyebang"
+      ],
+      "definition": "作业帮的硬件与内容业务、合规动态与用户规模变化。",
+      "related": [
+        "yuanfudao",
+        "shuangjian",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "yuanfudao",
+      "name": "猿辅导",
+      "group": "company",
+      "entityId": "yuanfudao",
+      "tags": [
+        "猿辅导",
+        "entity:yuanfudao"
+      ],
+      "definition": "猿辅导各条业务线的产品与经营动态，以及素质教育方向的调整。",
+      "related": [
+        "zuoyebang",
+        "xueersi",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "offcn",
+      "name": "中公教育",
+      "group": "company",
+      "entityId": "offcn",
+      "tags": [
+        "中公教育",
+        "entity:offcn"
+      ],
+      "definition": "中公教育的经营状况、退费纠纷、人事变动与职教业务布局。",
+      "related": [
+        "fenbi",
+        "hangye-shichang",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "fenbi",
+      "name": "粉笔",
+      "group": "company",
+      "entityId": "fenbi",
+      "tags": [
+        "entity:fenbi"
+      ],
+      "definition": "粉笔的职教业务、线上产品与经营数据。",
+      "related": [
+        "offcn",
+        "hangye-shichang"
+      ]
+    },
+    {
+      "slug": "xiaohongshu",
+      "name": "小红书教育内容",
+      "group": "company",
+      "entityId": "xiaohongshu",
+      "tags": [
+        "小红书",
+        "entity:xiaohongshu"
+      ],
+      "definition": "小红书上的教育内容生态：什么选题在爆、家长在问什么、机构账号怎么做内容与获客。",
+      "related": [
+        "douyin",
+        "neirong-fengxiang",
+        "siyu-huoke"
+      ]
+    },
+    {
+      "slug": "douyin",
+      "name": "抖音教育内容",
+      "group": "company",
+      "entityId": "douyin",
+      "tags": [
+        "抖音",
+        "entity:douyin"
+      ],
+      "definition": "抖音上的教育内容与直播招生生态：选题风向、账号打法与转化模式。",
+      "related": [
+        "xiaohongshu",
+        "neirong-fengxiang",
+        "siyu-huoke"
+      ]
+    },
+    {
+      "slug": "jiezhou",
+      "name": "芥舟语文",
+      "group": "company",
+      "entityId": "jiezhou",
+      "tags": [
+        "芥舟语文",
+        "entity:jiezhou"
+      ],
+      "definition": "对标账号：语文赛道的家长向内容账号，以附件资料引流见长。看它的选题结构、附件钩子和评论区追问。",
+      "related": [
+        "neirong-yunying",
+        "siyu-huoke",
+        "xiaohongshu"
+      ]
+    },
+    {
+      "slug": "shipinhao",
+      "name": "视频号教育内容",
+      "group": "company",
+      "entityId": "shipinhao",
+      "tags": [
+        "视频号",
+        "entity:shipinhao"
+      ],
+      "definition": "视频号上的教育内容与直播生态：什么内容在传、直播怎么开、私域怎么承接。",
+      "related": [
+        "xiaohongshu",
+        "douyin",
+        "siyu-huoke"
+      ]
+    },
+    {
+      "slug": "youshengxiao",
+      "name": "幼升小",
+      "group": "field",
+      "tags": [
+        "幼升小"
+      ],
+      "definition": "幼儿园升小学的入学政策、报名时间、材料要求与公办民办选择的全周期动态。",
+      "related": [
+        "zhaosheng-zhengce",
+        "xuequ-huapian",
+        "cq-jw"
+      ]
+    },
+    {
+      "slug": "xiaoshengchu",
+      "name": "小升初",
+      "group": "field",
+      "tags": [
+        "小升初"
+      ],
+      "definition": "小学升初中的升学路径：划片、摇号派位、公办民办、指标到校与家长最关心的节点。",
+      "related": [
+        "zhongkao",
+        "xuequ-huapian",
+        "qilongzhu"
+      ]
+    },
+    {
+      "slug": "zhongkao",
+      "name": "中考",
+      "group": "field",
+      "tags": [
+        "中考"
+      ],
+      "definition": "中考政策、指标到校、志愿填报、分数线与录取安排的全部动态。",
+      "related": [
+        "gaokao",
+        "cq-ksy",
+        "qilongzhu"
+      ]
+    },
+    {
+      "slug": "gaokao",
+      "name": "高考",
+      "group": "field",
+      "tags": [
+        "高考"
+      ],
+      "definition": "高考改革、报名与考试安排、志愿填报、录取批次与强基计划等专项招生。",
+      "related": [
+        "zhongkao",
+        "cq-ksy",
+        "moe"
+      ]
+    },
+    {
+      "slug": "shuangjian",
+      "name": "双减与监管",
+      "group": "field",
+      "tags": [
+        "双减",
+        "教培监管"
+      ],
+      "definition": "双减政策的执行与迭代、校外培训监管动作、机构合规红线与查处通报。",
+      "related": [
+        "jigou-jingying",
+        "policy-docs",
+        "hangye-shichang"
+      ]
+    },
+    {
+      "slug": "zhaosheng-zhengce",
+      "name": "招生政策",
+      "group": "field",
+      "tags": [
+        "招生政策"
+      ],
+      "definition": "各级各类学校的招生方案、招生计划、报名条件与录取规则的发布与变化。",
+      "related": [
+        "xuequ-huapian",
+        "youshengxiao",
+        "xiaoshengchu"
+      ]
+    },
+    {
+      "slug": "xuequ-huapian",
+      "name": "学区与划片",
+      "group": "field",
+      "tags": [
+        "学区划片",
+        "学位预警"
+      ],
+      "definition": "学区划分、划片范围调整、学位预警、六年一户与三对口等入学口径的实际执行。",
+      "related": [
+        "zhaosheng-zhengce",
+        "youshengxiao",
+        "yuqing"
+      ]
+    },
+    {
+      "slug": "minban-xuexiao",
+      "name": "民办学校",
+      "group": "field",
+      "tags": [
+        "民办学校"
+      ],
+      "definition": "民办学校的招生、转设、更名、收费与办学资质动态。",
+      "related": [
+        "jituanhua",
+        "zhaosheng-zhengce",
+        "xuexiao-jianshe"
+      ]
+    },
+    {
+      "slug": "jituanhua",
+      "name": "集团化办学",
+      "group": "field",
+      "tags": [
+        "集团化办学"
+      ],
+      "definition": "名校集团化办学、教育集团组建、名校办分校与优质资源下沉的进展。",
+      "related": [
+        "xuexiao-jianshe",
+        "minban-xuexiao",
+        "cq-jw"
+      ]
+    },
+    {
+      "slug": "yiti-techang",
+      "name": "艺体特长",
+      "group": "field",
+      "tags": [
+        "艺体特长"
+      ],
+      "definition": "艺术与体育特长生招生、艺考体考政策、校队与专项培养的动态。",
+      "related": [
+        "zhongkao",
+        "gaokao",
+        "zhaosheng-zhengce"
+      ]
+    },
+    {
+      "slug": "xinli-jiankang",
+      "name": "心理健康",
+      "group": "field",
+      "tags": [
+        "心理健康"
+      ],
+      "definition": "学生心理健康工作、校园心理事件、作业量与睡眠、家校沟通压力相关动态。",
+      "related": [
+        "yuqing",
+        "jiaoshi-jianfu",
+        "policy-docs"
+      ]
+    },
+    {
+      "slug": "jiaoshi-jianfu",
+      "name": "教师减负",
+      "group": "field",
+      "tags": [
+        "教师减负"
+      ],
+      "definition": "教师非教学事务清理、教师负担与待遇、职业倦怠与师生关系的一线处境。",
+      "related": [
+        "yixian",
+        "xinli-jiankang",
+        "policy-docs"
+      ]
+    },
+    {
+      "slug": "jigou-jingying",
+      "name": "机构经营",
+      "group": "field",
+      "tags": [
+        "机构经营"
+      ],
+      "definition": "教培机构的经营现状：招生难、续报率、获客成本、转型方向与从业者的真实体感。",
+      "related": [
+        "hangye-shichang",
+        "siyu-huoke",
+        "yixian"
+      ]
+    },
+    {
+      "slug": "siyu-huoke",
+      "name": "私域获客",
+      "group": "field",
+      "tags": [
+        "私域获客"
+      ],
+      "definition": "教育机构的获客与转化打法：公域引流、私域承接、社群运营与转化的实操经验。",
+      "related": [
+        "neirong-fengxiang",
+        "jigou-jingying",
+        "xiaohongshu"
+      ]
+    },
+    {
+      "slug": "neirong-yunying",
+      "name": "内容运营",
+      "group": "field",
+      "tags": [
+        "内容运营"
+      ],
+      "definition": "教育账号的内容方法论：选题、标题、封面、矩阵与爆款拆解。",
+      "related": [
+        "neirong-fengxiang",
+        "siyu-huoke",
+        "douyin"
+      ]
+    },
+    {
+      "slug": "policy-docs",
+      "name": "政策文件",
+      "group": "genre",
+      "tags": [
+        "政策/监管"
+      ],
+      "definition": "教委与政府发布的政策文件、通知、通报、公示与征求意见稿的原文与解读集合。",
+      "related": [
+        "shengxue",
+        "shuangjian",
+        "cq-jw"
+      ]
+    },
+    {
+      "slug": "shengxue",
+      "name": "升学招生",
+      "group": "genre",
+      "tags": [
+        "升学/招生"
+      ],
+      "definition": "招生方案、录取安排、分数线与志愿填报等升学节点的动态汇总。",
+      "related": [
+        "policy-docs",
+        "xiaoshengchu",
+        "zhongkao"
+      ]
+    },
+    {
+      "slug": "yuqing",
+      "name": "家长舆情",
+      "group": "genre",
+      "tags": [
+        "家长/舆情"
+      ],
+      "definition": "家长视角的投诉、争议、维权与热议：家长在焦虑什么、官方有没有回应。",
+      "related": [
+        "yixian",
+        "xuequ-huapian",
+        "neirong-fengxiang"
+      ]
+    },
+    {
+      "slug": "yixian",
+      "name": "一线声音",
+      "group": "genre",
+      "tags": [
+        "一线/从业者"
+      ],
+      "definition": "校长、教师、班主任、机构经营者的第一人称自述与经验复盘——尚未被官方回应的圈内信号。",
+      "related": [
+        "yuqing",
+        "jiaoshi-jianfu",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "jigou-dongtai",
+      "name": "机构动态",
+      "group": "genre",
+      "tags": [
+        "机构/经营"
+      ],
+      "definition": "机构监管、年检注销、违规查处、跑路退费与竞对动作的持续记录。",
+      "related": [
+        "hangye-shichang",
+        "shuangjian",
+        "jigou-jingying"
+      ]
+    },
+    {
+      "slug": "xuexiao-jianshe",
+      "name": "学校建设",
+      "group": "genre",
+      "tags": [
+        "学校/建设"
+      ],
+      "definition": "新建学校、新校区、学位供给与学校布局变化。",
+      "related": [
+        "jituanhua",
+        "minban-xuexiao",
+        "cq-jw"
+      ]
+    },
+    {
+      "slug": "hangye-shichang",
+      "name": "行业与市场",
+      "group": "genre",
+      "tags": [
+        "行业/市场"
+      ],
+      "definition": "教育行业的商业脉搏：融资并购、人事变动、商业模式与市场格局信号。",
+      "related": [
+        "jigou-dongtai",
+        "jigou-jingying",
+        "shuangjian"
+      ]
+    },
+    {
+      "slug": "jiedu-gonglue",
+      "name": "解读攻略",
+      "group": "genre",
+      "tags": [
+        "解读/攻略"
+      ],
+      "definition": "政策解读、择校攻略、升学方法论与避坑经验的合集。",
+      "related": [
+        "policy-docs",
+        "shengxue",
+        "neirong-fengxiang"
+      ]
+    },
+    {
+      "slug": "neirong-fengxiang",
+      "name": "内容风向",
+      "group": "genre",
+      "tags": [
+        "内容/风向"
+      ],
+      "definition": "家长和同行在社媒上正在讨论什么：选题风向、爆款角度与共鸣点。",
+      "related": [
+        "yuqing",
+        "neirong-yunying",
+        "xiaohongshu"
+      ]
+    },
+    {
+      "slug": "jingpin-zhanghao",
+      "name": "竞品账号动作",
+      "group": "genre",
+      "tags": [
+        "竞品/账号",
+        "竞品账号",
+        "爆款笔记",
+        "涨粉",
+        "直播间",
+        "付费投放",
+        "账号矩阵",
+        "选题排期"
+      ],
+      "definition": "同行账号的运营动作合集：跑了什么爆款、涨粉曲线、直播间、投放与矩阵增删。看别人怎么打，比看结论有用。",
+      "related": [
+        "neirong-yunying",
+        "siyu-huoke",
+        "xiaohongshu"
+      ]
+    },
+    {
+      "slug": "rili-jiedian",
+      "name": "行业日历与节点",
+      "group": "genre",
+      "tags": [
+        "日历/节点",
+        "开学",
+        "期末",
+        "半期",
+        "月考",
+        "选拔考试",
+        "中高考",
+        "政策",
+        "招生",
+        "家长会",
+        "竞赛",
+        "节假日",
+        "展会",
+        "节令",
+        "大促",
+        "申报",
+        "上新"
+      ],
+      "definition": "全年教育时间节点合集：开学、期末、半期、月考、选拔考试、中高考、政策窗口、招生报名、家长会、竞赛、节假日、展会、节令、大促、申报、上新。节点看日期，不看观点。",
+      "related": [
+        "shengxue",
+        "policy-docs",
+        "neirong-yunying"
+      ]
+    }
+  ]
+}

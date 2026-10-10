@@ -1,0 +1,499 @@
+{
+  "$comment": "教育行业示范信源：首次启动时导入（scripts/seed.ts），已存在的不会被覆盖。之后在后台“信源”里增删改。字段说明见 docs/customize.md。公众号信源走极致了（Dajiala）付费接口，必须先配 DAJIALA_KEY 才会开始抓；这 9 个重庆本地升学号已填好 ghid/wxid，默认 6 小时一轮。网页源里标了「待校准」的选择器，建议到后台“信源”页点一次试抓再定稿。末三个 external 源不吃接口、不需要 key：它们由外部脚本往 POST /api/ingest/items 推内容——竞品账号监测靠你自己的采集脚本，行业日历靠 tools/push-calendar.mjs 读 industry/calendar.json 推临近节点。",
+  "sources": [
+    {
+      "id": "web-moe-news",
+      "name": "教育部 · 教育要闻",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.moe.gov.cn/jyb_xwfb/",
+        "itemSelector": ".moe-list-init ul li",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": "span",
+        "baseUrl": "http://www.moe.gov.cn/jyb_xwfb/",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "moe",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "政策"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-cqjw-gggs",
+      "name": "重庆市教委 · 公告公示",
+      "kind": "web_list",
+      "config": {
+        "url": "http://jw.cq.gov.cn/zwxx_209/gggs/",
+        "parseMode": "markdown",
+        "allowUrlPrefixes": [
+          "/zwxx_209/gggs/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "cq-jw",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "政策",
+        "重庆"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-cqjw-bmdt",
+      "name": "重庆市教委 · 部门动态",
+      "kind": "web_list",
+      "config": {
+        "url": "http://jw.cq.gov.cn/zwxx_209/bmdt/",
+        "parseMode": "markdown",
+        "allowUrlPrefixes": [
+          "/zwxx_209/bmdt/"
+        ],
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "cq-jw",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "重庆"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-cqksy-news",
+      "name": "重庆市教育考试院 · 招考要闻",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.cqksy.cn/",
+        "itemSelector": ".cont-item",
+        "linkSelector": "a",
+        "titleSelector": "a",
+        "publishedAtSelector": ".time",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "cq-ksy",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "升学",
+        "重庆"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-jiemodui",
+      "name": "芥末堆",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.jiemodui.com/rss.xml",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1_5",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体",
+        "行业"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-thepaper-edu",
+      "name": "澎湃新闻 · 教育",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.thepaper.cn/channel_25951",
+        "parseMode": "markdown",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 60,
+      "tags": [
+        "媒体"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-jyb",
+      "name": "中国教育新闻网",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.jyb.cn/",
+        "parseMode": "markdown",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "媒体"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "web-heibandongcha",
+      "name": "黑板洞察",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.heibandongcha.com/",
+        "parseMode": "markdown",
+        "sortByPublishedAt": true,
+        "_aihot": {
+          "initialBackfillLimit": 6
+        }
+      },
+      "tier": "T1_5",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "媒体",
+        "行业"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-cq-shengxue",
+      "name": "重庆升学中心",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_bb1b011789c2",
+        "nickname": "重庆升学中心"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-youziqing-cq",
+      "name": "柚子青重庆家长圈",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "qingyoucq",
+        "nickname": "柚子青重庆家长圈"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "机构",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-muzi-shengxue",
+      "name": "木子升学通",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_aeb7e175e9bb",
+        "nickname": "木子升学通"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-shancheng-jiazhang",
+      "name": "山城学习家长圈",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_bb8afe68f605",
+        "nickname": "山城学习家长圈"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "机构",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-jingxue-shengxue",
+      "name": "径学升学资讯",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_db5e2c6dc2fe",
+        "nickname": "径学升学资讯"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "机构",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-kuaixuesheng",
+      "name": "快升学",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "kuaishengxue",
+        "nickname": "快升学"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "机构",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-jiazhangbang-jiazhang",
+      "name": "家长帮家长",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "ximabangjiazhang",
+        "nickname": "家长帮家长"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "一线",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-shengxue-zhaowo",
+      "name": "升学找我",
+      "kind": "mp_account",
+      "config": {
+        "wxid": "cqmmgojy",
+        "nickname": "升学找我"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "机构",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "mp-youma-shengxue",
+      "name": "佑妈升学通",
+      "kind": "mp_account",
+      "config": {
+        "ghid": "gh_36d043fc27d1",
+        "nickname": "佑妈升学通"
+      },
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "重庆",
+        "升学",
+        "一线",
+        "公众号"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+
+    {
+      "id": "hot-xhs-edu",
+      "name": "小红书 · 教育话题（热度信号）",
+      "kind": "external",
+      "config": {},
+      "tier": "EXCLUDE_MP",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "hot_signal",
+      "interval_minutes": 180,
+      "tags": [
+        "社媒",
+        "热度"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "hot-douyin-edu",
+      "name": "抖音 · 教育话题（热度信号）",
+      "kind": "external",
+      "config": {},
+      "tier": "EXCLUDE_MP",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "hot_signal",
+      "interval_minutes": 180,
+      "tags": [
+        "社媒",
+        "热度"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ext-gq-radar",
+      "name": "老甘教育热点爬虫（WebSearch 矩阵）",
+      "kind": "external",
+      "config": {},
+      "tier": "T1_5",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 180,
+      "tags": [
+        "自建",
+        "一线"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ext-gq-competitor",
+      "name": "竞品账号监测（小红书 / 抖音 / 视频号）",
+      "kind": "external",
+      "config": {},
+      "tier": "T2",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "tags": [
+        "自建",
+        "竞品"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "ext-gq-calendar",
+      "name": "教育行业日历 · 节点与日程",
+      "kind": "external",
+      "config": {},
+      "tier": "T1",
+      "first_party": false,
+      "owner_entity_id": null,
+      "participation_mode": "editorial",
+      "interval_minutes": 1440,
+      "tags": [
+        "自建",
+        "日历"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    }
+  ]
+}
